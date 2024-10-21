@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  logger:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db-thda-do-user-15365662-0.i.db.ondigitalocean.com:25060/data_logger
+      SPRING_DATASOURCE_USERNAME: doadmin
+      SPRING_DATASOURCE_PASSWORD: AVNS_cYmLIioICOF3iou_v1P
+    networks:
+      - data_logger
+#    depends_on:
+#      - postgres
+
+#  postgres:
+#    image: postgres:latest
+#    container_name: data_postgres
+#    environment:
+#      POSTGRES_DB: data_logger
+#      POSTGRES_USER: doadmin
+#      POSTGRES_PASSWORD: AVNS_cYmLIioICOF3iou_v1P
+#    ports:
+#      - "5432:5432"
+#    networks:
+#      - data_logger
+
+networks:
+  data_logger:
+    driver: bridge

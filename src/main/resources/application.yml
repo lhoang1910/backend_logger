@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: logger
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://db-thda-do-user-15365662-0.i.db.ondigitalocean.com:25060/data_logger
+    username: doadmin
+    password: AVNS_cYmLIioICOF3iou_v1P
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+server:
+  port: 8080
